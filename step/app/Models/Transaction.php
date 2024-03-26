@@ -13,4 +13,11 @@ class Transaction extends Model
         'recipient_id',
         'amount',
     ];
+    public function sender(){
+        return $this->belongsTo(Account::class,'sender_id');
+    }
+
+    public function recipient(){
+        return $this->belongsTo(Account::class,'recipient_id');
+    }
 }
